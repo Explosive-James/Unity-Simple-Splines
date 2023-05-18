@@ -132,7 +132,8 @@ namespace SimpleSplines.Utilities
             if (Mathf.Abs(Vector3.Dot(tangent, Vector3.up)) == 1)
                 return Quaternion.Euler(0, angle, 0) * Vector3.back;
 
-            Vector3 bitangent = Vector3.Cross(tangent, Quaternion.Euler(0, 0, angle) * Vector3.up);
+            // ToDo: This might cause issues.
+            Vector3 bitangent = Vector3.Cross(tangent, Quaternion.Euler(angle, 0, angle) * Vector3.up);
             return Vector3.Cross(bitangent, tangent).normalized;
         }
         #endregion
