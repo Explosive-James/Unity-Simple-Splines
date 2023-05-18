@@ -133,7 +133,8 @@ namespace SimpleSplines.Utilities
                 return Quaternion.Euler(0, angle, 0) * Vector3.back;
 
             // ToDo: This might cause issues.
-            Vector3 bitangent = Vector3.Cross(tangent, Quaternion.Euler(angle, 0, angle) * Vector3.up);
+            Quaternion orientation = Quaternion.LookRotation(tangent);
+            Vector3 bitangent = Vector3.Cross(tangent, orientation * Quaternion.Euler(0, 0, angle) * Vector3.up);
             return Vector3.Cross(bitangent, tangent).normalized;
         }
         #endregion

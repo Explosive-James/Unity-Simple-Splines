@@ -1,6 +1,6 @@
 {
   "name": "explosivejames.simplesplines",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A tool to create bezier curves and meshes that follow them.",
   "keywords": [
     "simple",
